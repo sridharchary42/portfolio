@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Malloju Sridhara Chary — Cloud Infrastructure &amp; DevOps Engineer</title>
+<meta name="description" content="Malloju Sridhara Chary — Cloud Infrastructure &amp; DevOps Engineer. AWS Certified Solutions Architect Associate and HashiCorp Terraform Associate. Builds highly available AWS infrastructure with Terraform, runs containerized workloads on Amazon EKS with Helm and IRSA, and automates delivery with GitHub Actions." />
+<meta name="author" content="Malloju Sridhara Chary" />
+<meta property="og:title" content="Malloju Sridhara Chary — Cloud Infrastructure &amp; DevOps Engineer" />
+<meta property="og:description" content="AWS SAA + Terraform Associate. Terraform-built VPCs, EC2 Auto Scaling behind ALBs, Kubernetes on Amazon EKS, and GitHub Actions CI/CD for infrastructure." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== BOOT INTRO ===== -->
+<div id="boot" class="boot">
+  <div class="boot-window">
+    <div class="boot-bar">
+      <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+      <span class="boot-title">sridhar@cloud-infra:~ — terraform apply</span>
+    </div>
+    <pre id="bootLog" class="boot-log"></pre>
+  </div>
+  <span class="boot-skip">click anywhere to skip</span>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand">
+    <span class="brand-prompt">&gt;_</span> sridhar<span class="muted">@</span>cloud-infra
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#architecture">Architecture</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Stack</a>
+    <a href="#experience">Experience</a>
+    <a href="#certs">Certs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="nav-cta" href="#contact"><span class="led ok pulse"></span>Open to opportunities</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="status-line">
+        <span class="led ok pulse"></span> AWS SAA &amp; TERRAFORM ASSOCIATE CERTIFIED
+        <span class="muted">·</span> MONTGOMERY, AL <span class="muted">·</span> OPEN TO RELOCATE
+      </div>
+      <h1>Malloju Sridhara&nbsp;Chary</h1>
+      <p class="role">Cloud Infrastructure <span class="slash">/</span> DevOps Engineer</p>
+      <p class="tagline">
+        I build AWS infrastructure as code. Custom VPCs, EC2 Auto Scaling behind Application
+        Load Balancers, and containerized workloads on Amazon EKS — all provisioned with
+        reusable Terraform modules and shipped through GitHub Actions. Backed by two years
+        keeping enterprise production systems alive for a global investment management firm.
+      </p>
+      <div class="hero-tags">
+        <span class="tag hot">Terraform</span>
+        <span class="tag hot">Amazon EKS</span>
+        <span class="tag hot">AWS</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Docker · Helm</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Prometheus · Grafana</span>
+        <span class="tag">Python · Ansible</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="#architecture">Trace a request →</a>
+        <a class="btn ghost" href="#projects">View projects</a>
+        <a class="btn ghost" href="https://github.com/sridharchary42" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+
+    <div class="term-card">
+      <div class="term-bar">
+        <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+        <span class="term-title">~/aws-infra — zsh</span>
+      </div>
+      <pre id="heroTerm" class="term-body"></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KPI ===== -->
+<section id="metrics" class="section reveal">
+  <div class="section-head">
+    <h2><span class="hash">#</span> at_a_glance</h2>
+    <span class="section-sub">verifiable · nothing inflated</span>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-num" data-target="3" data-suffix="">0</div>
+      <div class="kpi-label">Cloud &amp; IaC certifications</div>
+      <div class="kpi-note">AWS SAA · AWS CCP · Terraform Associate</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num" data-target="3" data-suffix="">0</div>
+      <div class="kpi-label">Production-grade AWS builds</div>
+      <div class="kpi-note">Terraform · EKS · CI/CD — all on GitHub</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num" data-target="20" data-suffix="+">0</div>
+      <div class="kpi-label">AWS services worked with</div>
+      <div class="kpi-note">VPC · EC2 · EKS · IAM · S3 · ALB · CloudWatch</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num" data-target="2" data-suffix="+ yrs">0</div>
+      <div class="kpi-label">Enterprise production support</div>
+      <div class="kpi-note">Infosys · global investment management client</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ARCHITECTURE ===== -->
+<section id="architecture" class="section reveal">
+  <div class="section-head">
+    <h2><span class="hash">#</span> architecture</h2>
+    <span class="section-sub">how a request reaches a pod — click any step</span>
+  </div>
+
+  <div class="arch-wrap">
+    <div class="arch-toolbar">
+      <span class="led ok"></span>
+      <span class="feed-title">request path · internet → Route 53 → ALB → EKS pod</span>
+      <button class="arch-btn" id="traceBtn">▶ Run trace</button>
+    </div>
+
+    <div class="arch-svg-holder">
+      <svg class="arch-svg" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AWS architecture diagram showing the request path from the internet through Route 53 and an Internet Gateway to an Application Load Balancer in public subnets, into EKS worker nodes and pods in private subnets, with NAT Gateway egress and IRSA-based access to S3 and CloudWatch">
+
+        <!-- VPC boundary -->
+        <rect class="zone-box" x="118" y="42" width="764" height="334" rx="8"/>
+        <text class="zone-label" x="130" y="60">VPC 10.0.0.0/16</text>
+
+        <!-- Subnet zones -->
+        <rect class="zone-box" x="268" y="70" width="206" height="288" rx="6"/>
+        <text class="zone-label" x="278" y="87">PUBLIC SUBNETS (2 AZ)</text>
+        <rect class="zone-box" x="500" y="70" width="212" height="288" rx="6"/>
+        <text class="zone-label" x="510" y="87">PRIVATE SUBNETS (2 AZ)</text>
+
+        <!-- Flow lines -->
+        <path class="flow-line" id="l1" d="M96 132 H118 V100 H140"/>
+        <path class="flow-line" id="l2" d="M96 132 H118 V176 H140"/>
+        <path class="flow-line" id="l3" d="M228 100 H252 V112 H284"/>
+        <path class="flow-line" id="l4" d="M228 176 H252 V132 H284"/>
+        <path class="flow-line" id="l5" d="M370 144 V184"/>
+        <path class="flow-line" id="l6" d="M460 208 H516"/>
+        <path class="flow-line" id="l7" d="M605 232 V262"/>
+        <path class="flow-line" id="l8" d="M516 291 H460"/>
+        <path class="flow-line" id="l9" d="M694 291 H726 V179 H752"/>
+
+        <!-- Nodes -->
+        <g id="n1" data-step="1" style="cursor:pointer">
+          <rect class="node-box" x="18" y="110" width="78" height="44" rx="6"/>
+          <text class="node-label" x="57" y="130" text-anchor="middle">Internet</text>
+          <text class="node-sub" x="57" y="143" text-anchor="middle">client</text>
+        </g>
+
+        <g id="n2" data-step="2" style="cursor:pointer">
+          <rect class="node-box" x="140" y="78" width="88" height="44" rx="6"/>
+          <text class="node-label" x="184" y="98" text-anchor="middle">Route 53</text>
+          <text class="node-sub" x="184" y="111" text-anchor="middle">DNS alias</text>
+        </g>
+
+        <g id="n3" data-step="3" style="cursor:pointer">
+          <rect class="node-box" x="140" y="154" width="88" height="44" rx="6"/>
+          <text class="node-label" x="184" y="174" text-anchor="middle">IGW</text>
+          <text class="node-sub" x="184" y="187" text-anchor="middle">ingress</text>
+        </g>
+
+        <g id="n4" data-step="4" style="cursor:pointer">
+          <rect class="node-box" x="284" y="96" width="174" height="48" rx="6"/>
+          <text class="node-label" x="371" y="117" text-anchor="middle">Application LB</text>
+          <text class="node-sub" x="371" y="132" text-anchor="middle">:443 listener</text>
+        </g>
+
+        <g id="n5" data-step="5" style="cursor:pointer">
+          <rect class="node-box" x="284" y="184" width="174" height="48" rx="6"/>
+          <text class="node-label" x="371" y="205" text-anchor="middle">Security Groups</text>
+          <text class="node-sub" x="371" y="220" text-anchor="middle">alb-sg to node-sg</text>
+        </g>
+
+        <g id="n8" data-step="8" style="cursor:pointer">
+          <rect class="node-box" x="284" y="268" width="174" height="46" rx="6"/>
+          <text class="node-label" x="371" y="289" text-anchor="middle">NAT Gateway</text>
+          <text class="node-sub" x="371" y="304" text-anchor="middle">egress only</text>
+        </g>
+
+        <g id="n6" data-step="6" style="cursor:pointer">
+          <rect class="node-box" x="516" y="184" width="178" height="48" rx="6"/>
+          <text class="node-label" x="605" y="205" text-anchor="middle">EKS Worker Nodes</text>
+          <text class="node-sub" x="605" y="220" text-anchor="middle">managed node group</text>
+        </g>
+
+        <g id="n7" data-step="7" style="cursor:pointer">
+          <rect class="node-box" x="516" y="262" width="178" height="58" rx="6"/>
+          <text class="node-label" x="605" y="283" text-anchor="middle">Pod</text>
+          <text class="node-sub" x="605" y="297" text-anchor="middle">Deployment · Service</text>
+          <text class="node-sub" x="605" y="309" text-anchor="middle">IRSA service account</text>
+        </g>
+
+        <g id="n9" data-step="9" style="cursor:pointer">
+          <rect class="node-box" x="752" y="156" width="118" height="46" rx="6"/>
+          <text class="node-label" x="811" y="177" text-anchor="middle">S3 · CloudWatch</text>
+          <text class="node-sub" x="811" y="192" text-anchor="middle">via IAM role</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="arch-explain" id="archExplain">
+      <div class="arch-step">READY</div>
+      <div>Click <strong>Run trace</strong> to follow a request end to end — or click any box to jump straight to it. Every component below is defined in Terraform in the projects section.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="section reveal">
+  <div class="section-head">
+    <h2><span class="hash">#</span> projects</h2>
+    <span class="section-sub">built, broken, and rebuilt in my own AWS account</span>
+  </div>
+
+  <div class="proj-list">
+
+    <!-- PROJECT 1 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="proj-badge iac">TERRAFORM</span>
+        <h3>Production AWS Infrastructure with Terraform</h3>
+        <a class="proj-repo" href="https://github.com/sridharchary42" target="_blank" rel="noopener">⌥ view on GitHub →</a>
+      </div>
+      <div class="proj-body">
+        <p class="proj-summary">
+          A highly available, multi-AZ AWS environment defined entirely as code. Nothing in it was
+          clicked together in the console — the whole stack can be destroyed and rebuilt from an
+          empty account with a single <code>terraform apply</code>, which is exactly how I tested it.
+        </p>
+        <div class="proj-what">
+          <div>
+            <h5>Network</h5>
+            <ul>
+              <li>Custom VPC spanning two Availability Zones</li>
+              <li>Public and private subnets with separate route tables</li>
+              <li>Internet Gateway for ingress, NAT Gateway for private egress</li>
+              <li>Security Groups scoped so only the ALB can reach the instances</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Compute &amp; Traffic</h5>
+            <ul>
+              <li>EC2 instances in an Auto Scaling Group across both AZs</li>
+              <li>Application Load Balancer with target groups and health checks</li>
+              <li>Launch template with user data for instance bootstrap</li>
+              <li>Unhealthy instances drained and replaced without downtime</li>
+            </ul>
+          </div>
+          <div>
+            <h5>State &amp; Security</h5>
+            <ul>
+              <li>Reusable modules for network, compute, and security layers</li>
+              <li>Remote state in S3 with versioning enabled</li>
+              <li>State locking through a DynamoDB table to prevent concurrent applies</li>
+              <li>Least-privilege IAM roles instead of long-lived access keys</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-stack">
+          <span>Terraform</span><span>VPC</span><span>EC2</span><span>Auto Scaling</span><span>ALB</span>
+          <span>NAT Gateway</span><span>Route 53</span><span>IAM</span><span>S3 Backend</span><span>DynamoDB Lock</span>
+        </div>
+        <button class="code-toggle" data-code="code1">▸ Show a slice of the Terraform</button>
+        <div class="code-block" id="code1">
+<pre><span class="c"># backend.tf — remote state, locked so two applies can't collide</span>
+<span class="k">terraform</span> {
+  <span class="k">backend</span> <span class="s">"s3"</span> {
+    bucket         = <span class="s">"sdc-tfstate-prod"</span>
+    key            = <span class="s">"network/terraform.tfstate"</span>
+    region         = <span class="s">"us-east-1"</span>
+    dynamodb_table = <span class="s">"tf-state-lock"</span>
+    encrypt        = <span class="n">true</span>
+  }
+}
+
+<span class="c"># The ALB is the only thing allowed to talk to the instances.</span>
+<span class="k">resource</span> <span class="s">"aws_security_group_rule"</span> <span class="s">"alb_to_app"</span> {
+  type                     = <span class="s">"ingress"</span>
+  from_port                = <span class="n">80</span>
+  to_port                  = <span class="n">80</span>
+  protocol                 = <span class="s">"tcp"</span>
+  security_group_id        = aws_security_group.app.id
+  source_security_group_id = aws_security_group.alb.id
+}</pre>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 2 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="proj-badge k8s">KUBERNETES</span>
+        <h3>Containerized Workloads on Amazon EKS</h3>
+        <a class="proj-repo" href="https://github.com/sridharchary42" target="_blank" rel="noopener">⌥ view on GitHub →</a>
+      </div>
+      <div class="proj-body">
+        <p class="proj-summary">
+          An EKS cluster running a containerized application with rolling updates, autoscaling, and
+          no hardcoded AWS credentials anywhere in the cluster. The piece I'm proudest of is IRSA —
+          pods assume IAM roles through a service account, so a compromised container can only reach
+          the one bucket it was scoped to.
+        </p>
+        <div class="proj-what">
+          <div>
+            <h5>Workloads</h5>
+            <ul>
+              <li>Deployments with rolling update strategy and readiness probes</li>
+              <li>Services and Ingress fronted by the AWS Load Balancer Controller</li>
+              <li>ConfigMaps and Secrets for environment-specific configuration</li>
+              <li>Horizontal Pod Autoscaler driven by CPU utilization</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Identity &amp; Packaging</h5>
+            <ul>
+              <li>IAM Roles for Service Accounts via an OIDC provider on the cluster</li>
+              <li>Pods reach S3 and CloudWatch with zero static credentials</li>
+              <li>Applications packaged as Helm charts with per-environment values</li>
+              <li>Kubernetes RBAC limiting what each service account can do in-cluster</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Observability</h5>
+            <ul>
+              <li>Prometheus scraping cluster and application metrics</li>
+              <li>Grafana dashboards for pod health and resource utilization</li>
+              <li>CloudWatch Container Insights for node-level visibility</li>
+              <li>Alerts on pod restart loops and sustained memory pressure</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-stack">
+          <span>Amazon EKS</span><span>Kubernetes</span><span>Docker</span><span>Helm</span><span>IRSA</span>
+          <span>RBAC</span><span>Ingress</span><span>HPA</span><span>Prometheus</span><span>Grafana</span>
+        </div>
+        <button class="code-toggle" data-code="code2">▸ Show the IRSA service account</button>
+        <div class="code-block" id="code2">
+<pre><span class="c"># The annotation is the whole trick: the pod exchanges its projected</span>
+<span class="c"># service-account token for temporary AWS credentials via STS.</span>
+<span class="k">apiVersion</span>: v1
+<span class="k">kind</span>: ServiceAccount
+<span class="k">metadata</span>:
+  <span class="k">name</span>: app-s3-reader
+  <span class="k">namespace</span>: production
+  <span class="k">annotations</span>:
+    eks.amazonaws.com/role-arn: <span class="s">arn:aws:iam::&lt;acct&gt;:role/app-s3-reader</span>
+<span class="c">---</span>
+<span class="k">spec</span>:
+  <span class="k">serviceAccountName</span>: app-s3-reader   <span class="c"># no AWS keys in the image, ever</span>
+  <span class="k">containers</span>:
+    - <span class="k">name</span>: web
+      <span class="k">readinessProbe</span>:
+        <span class="k">httpGet</span>: { <span class="k">path</span>: /healthz, <span class="k">port</span>: <span class="n">8080</span> }</pre>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 3 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="proj-badge cicd">CI/CD</span>
+        <h3>GitHub Actions Pipeline for Infrastructure as Code</h3>
+        <a class="proj-repo" href="https://github.com/sridharchary42" target="_blank" rel="noopener">⌥ view on GitHub →</a>
+      </div>
+      <div class="proj-body">
+        <p class="proj-summary">
+          The safety net around the Terraform above. Every pull request gets formatted, validated,
+          and planned automatically, and the plan output is posted to the PR so a human reviews the
+          diff before anything touches real infrastructure. Applies only run after an explicit approval.
+        </p>
+        <div class="proj-what">
+          <div>
+            <h5>Pipeline</h5>
+            <ul>
+              <li><code>terraform fmt -check</code> and <code>validate</code> on every push</li>
+              <li><code>terraform plan</code> on pull requests, output commented on the PR</li>
+              <li><code>terraform apply</code> gated behind a protected environment</li>
+              <li>Manual approval required before production applies</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Safety</h5>
+            <ul>
+              <li>Drift detection catches manual console changes</li>
+              <li>State locking prevents two pipelines applying at once</li>
+              <li>Rollback path via previous known-good state version</li>
+              <li>Short-lived credentials through OIDC — no static secrets in the repo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-stack">
+          <span>GitHub Actions</span><span>Terraform</span><span>OIDC</span><span>Jenkins</span>
+          <span>Bash</span><span>Approval Gates</span>
+        </div>
+        <button class="code-toggle" data-code="code3">▸ Show the workflow</button>
+        <div class="code-block" id="code3">
+<pre><span class="k">name</span>: terraform
+<span class="k">on</span>: { <span class="k">pull_request</span>: { <span class="k">branches</span>: [main] } }
+
+<span class="k">permissions</span>:
+  id-token: write   <span class="c"># OIDC — no long-lived AWS keys in GitHub secrets</span>
+  contents: read
+  pull-requests: write
+
+<span class="k">jobs</span>:
+  <span class="k">plan</span>:
+    <span class="k">runs-on</span>: ubuntu-latest
+    <span class="k">steps</span>:
+      - <span class="k">uses</span>: actions/checkout@v4
+      - <span class="k">uses</span>: aws-actions/configure-aws-credentials@v4
+        <span class="k">with</span>:
+          role-to-assume: <span class="s">arn:aws:iam::&lt;acct&gt;:role/gha-terraform</span>
+          aws-region: us-east-1
+      - <span class="k">run</span>: terraform fmt -check -recursive
+      - <span class="k">run</span>: terraform init &amp;&amp; terraform validate
+      - <span class="k">run</span>: terraform plan -no-color -out=tfplan</pre>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 4 -->
+    <article class="proj">
+      <div class="proj-head">
+        <span class="proj-badge sec">SECURITY</span>
+        <h3>Cybersecurity Network Monitoring — M.S. Capstone</h3>
+        <a class="proj-repo" href="https://github.com/sridharchary42" target="_blank" rel="noopener">⌥ view on GitHub →</a>
+      </div>
+      <div class="proj-body">
+        <p class="proj-summary">
+          Graduate capstone at Auburn University at Montgomery. Deployed Snort as an IDS/IPS across a
+          simulated data center segment, correlated suspicious traffic with Wireshark captures, and
+          wrote up hardening recommendations for the provisioning systems that sat behind it.
+        </p>
+        <div class="proj-what">
+          <div>
+            <h5>Detection</h5>
+            <ul>
+              <li>Snort rules tuned against replayed attack traffic to cut false positives</li>
+              <li>Packet-level correlation in Wireshark to confirm each alert</li>
+              <li>Documented indicators of compromise and response steps</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Also in the lab portfolio</h5>
+            <ul>
+              <li>Network inventory and asset-tracking platform simulating CMDB workflows</li>
+              <li>GNS3 + VirtualBox Layer 1/2 lab with fault injection and full RCA writeups</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-stack">
+          <span>Snort</span><span>Suricata</span><span>Wireshark</span><span>IDS/IPS</span>
+          <span>GNS3</span><span>RCA</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section reveal">
+  <div class="section-head">
+    <h2><span class="hash">#</span> tech_stack</h2>
+    <span class="section-sub">what I reach for</span>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4><span class="led ok"></span> Infrastructure as Code</h4>
+      <p>Terraform, reusable modules, remote state on an S3 backend, DynamoDB state locking,
+      variables, outputs, workspaces, drift detection, <code>plan</code>/<code>apply</code> workflows.</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="led ok"></span> AWS Networking</h4>
+      <p>VPC design, public and private subnets, route tables, Internet Gateway, NAT Gateway,
+      Route 53, Security Groups, Network ACLs, VPC endpoints, Application Load Balancer,
+      target groups, health checks.</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="led ok"></span> AWS Compute &amp; Storage</h4>
+      <p>EC2, Auto Scaling Groups, launch templates, AMIs, user data, EBS, ENI, Amazon S3
+      with versioning, lifecycle policies and bucket policies, EFS.</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="led ok"></span> Containers &amp; Kubernetes</h4>
+      <p>Docker, Amazon EKS, Deployments, Services, Ingress, ConfigMaps, Secrets,
+      Horizontal Pod Autoscaling, Helm charts, Kubernetes RBAC, IAM Roles for Service Accounts.</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="led ok"></span> Identity &amp; Security</h4>
+      <p>IAM roles and policies, least privilege, STS and assumed roles, OIDC federation,
+      Secrets Manager, KMS, security patching, vulnerability analysis, IDS/IPS.</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="led ok"></span> CI/CD &amp; Automation</h4>
+      <p>GitHub Actions, Jenkins, approval gates, Python, Bash, PowerShell, Ansible playbooks,
+      VMware vRealize Automation, automated validation and rollback.</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="led warn"></span> Monitoring &amp; Observability</h4>
+      <p>CloudWatch metrics, logs and alarms, CloudTrail, Container Insights, Prometheus,
+      Grafana dashboards, Splunk and SIEM, alert triage, root cause analysis.</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="led ok"></span> Platforms &amp; Virtualization</h4>
+      <p>Linux (RHEL, Ubuntu), Windows Server 2016/2019, VMware ESXi and vCenter, Hyper-V,
+      Active Directory, Microsoft Azure fundamentals.</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="led ok"></span> Process &amp; Collaboration</h4>
+      <p>ITIL v4, ServiceNow incident/change/CMDB, Agile and Scrum, Jira, Confluence,
+      technical documentation, cross-functional coordination, executive-level presentations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="section reveal">
+  <div class="section-head">
+    <h2><span class="hash">#</span> experience</h2>
+    <span class="section-sub">where the production instincts came from</span>
+  </div>
+
+  <div class="timeline">
+
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <h3>Systems Analyst</h3>
+          <p class="job-org">OpenKyber LLC <span class="sep">·</span> Round Rock, TX</p>
+        </div>
+        <span class="job-date">Sep 2025 – Nov 2025</span>
+      </div>
+      <ul class="job-points">
+        <li>Evaluated existing systems and workflows to identify reliability and integration gaps, translating findings into technical specifications.</li>
+        <li>Designed integration strategies across applications and databases, and conducted feasibility and cost-benefit analysis to support IT investment decisions.</li>
+        <li>Tested and monitored system performance for reliability, documenting technical procedures and configurations for ongoing operational reference.</li>
+      </ul>
+      <div class="job-stack">
+        <span>Systems Analysis</span><span>Integration Design</span><span>Documentation</span><span>Performance Testing</span>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <h3>Senior Systems Analyst — Infrastructure &amp; Data Center Operations</h3>
+          <p class="job-org">Infosys Ltd. <span class="sep">·</span> Key client: The Capital Group Companies (global investment management, USA)</p>
+        </div>
+        <span class="job-date">Dec 2021 – Dec 2023</span>
+      </div>
+      <ul class="job-points">
+        <li>Managed enterprise Windows and Linux infrastructure supporting high availability, incident response, and production operations for a global investment management firm.</li>
+        <li>Handled end-to-end server lifecycle management — provisioning, configuration, and decommissioning of physical and virtual servers — under ITIL change management.</li>
+        <li>Automated provisioning and repetitive operational tasks with PowerShell, Python, Ansible, and VMware vRealize Automation, cutting manual effort across server and network operations.</li>
+        <li>Monitored infrastructure health through Splunk and SIEM dashboards, triaged incidents to resolution, and authored root cause analyses in ServiceNow.</li>
+        <li>Ran patch management across Windows and Linux fleets, validating application functionality post-deployment and keeping compliance records current.</li>
+        <li>Entrusted by onsite USA leadership to research and present an infrastructure automation roadmap covering approach, risk mitigation, and projected efficiency gains.</li>
+      </ul>
+      <div class="job-stack">
+        <span>VMware / vRA</span><span>Ansible</span><span>PowerShell</span><span>Python</span>
+        <span>ServiceNow</span><span>Splunk / SIEM</span><span>ITIL v4</span><span>Patch Management</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== CREDENTIALS ===== -->
+<section id="certs" class="section reveal">
+  <div class="section-head">
+    <h2><span class="hash">#</span> credentials</h2>
+    <span class="section-sub">education &amp; certifications</span>
+  </div>
+  <div class="cred-grid">
+    <div class="cred-col">
+      <h4>Education</h4>
+      <div class="cred-item">
+        <strong>M.S. — Computer Information Systems (Cybersecurity)</strong>
+        <span>Auburn University at Montgomery · Jan 2024 – Dec 2025</span>
+        <span class="muted">GPA 3.41 / 4.0 · Merit-Based Scholarship Recipient</span>
+      </div>
+    </div>
+    <div class="cred-col">
+      <h4>Certifications</h4>
+      <ul class="cert-list">
+        <li><span class="led ok"></span><div><strong>AWS Certified Solutions Architect — Associate</strong> <em>· Amazon Web Services, 2026</em></div></li>
+        <li><span class="led ok"></span><div><strong>HashiCorp Certified: Terraform Associate</strong> <em>· HashiCorp, 2026</em></div></li>
+        <li><span class="led ok"></span><div><strong>AWS Certified Cloud Practitioner</strong> <em>· Amazon Web Services, 2026</em></div></li>
+        <li><span class="led ok"></span><div><strong>ITIL Foundation v4</strong> <em>· AXELOS</em></div></li>
+        <li><span class="led ok"></span><div><strong>Agile Fundamentals &amp; Scrum Methodology</strong></div></li>
+        <li><span class="led ok"></span><div><strong>Windows Server Administration</strong> <em>· Infosys Certified</em></div></li>
+        <li><span class="led ok"></span><div><strong>Linux System Administration (Ubuntu / RHEL)</strong> <em>· Infosys Certified</em></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section contact reveal">
+  <div class="contact-card">
+    <div class="contact-bar">
+      <span class="led ok pulse"></span> connect.sh — let's talk infrastructure
+    </div>
+    <div class="contact-body">
+      <h2>Let's build something that stays up</h2>
+      <p>
+        Looking for a Cloud or DevOps engineer who writes the infrastructure instead of clicking it,
+        and who has actually carried a pager? I'd like to hear about it.
+      </p>
+      <div class="contact-links">
+        <a class="btn primary" href="mailto:sridharachary.malloju@gmail.com">✉ sridharachary.malloju@gmail.com</a>
+        <a class="btn ghost" href="tel:+14045025538">☎ +1 (404) 502-5538</a>
+        <a class="btn ghost" href="https://linkedin.com/in/sridharachary-malloju" target="_blank" rel="noopener">in · LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/sridharchary42" target="_blank" rel="noopener">⌥ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <span>&copy; <span id="year"></span> Malloju Sridhara Chary · Montgomery, AL</span>
+  <span class="muted">Built from scratch · no framework, no build step</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
